@@ -29,4 +29,10 @@ public class DeveloperTest {
     // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
     // 100% mutation coverage (all mutants timed out or killed)
 
+    @Test
+    public void getGithubId_returns_correct_githubId() {
+        // <https://bit.ly/cs156-f24-teams>
+        assertEquals("bsaiju", Developer.getGithubId());
+    }
+
 }
