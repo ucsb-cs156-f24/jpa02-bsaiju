@@ -61,4 +61,21 @@ public class TeamTest {
         assertTrue(!team.equals(other_team), "Equals fails on different name but same members");
     }
 
+    @Test
+    public void hashCode_test() {
+        team.setName("Jekyll");
+        team.addMember("Hyde");
+        Team other_team = new Team();
+        other_team.setName("Jekyll");
+        other_team.addMember("Hyde");
+        assertEquals(team.hashCode(), other_team.hashCode());
+    }
+
+
+    @Test
+    public void hashCode_mutation_test_bandaid() {
+        int result = team.hashCode();
+        int expectedResult = -1226298695;
+        assertEquals(expectedResult, result);
+    }
 }
